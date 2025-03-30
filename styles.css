@@ -1,3 +1,4 @@
+/* Reset default styles */
 * {
   margin: 0;
   padding: 0;
@@ -5,85 +6,108 @@
   font-family: Arial, sans-serif;
 }
 
+/* Body Styling */
 body {
-  background-image: url('bg.jpg');
+  background-image: url('bg.jpg'); /* Background image */
   background-size: cover;
+  background-position: center;
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
-  color: #000000;
+  padding: 20px;
 }
 
+/* Login Container */
 .login-container {
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  height: 100%;
-  padding: 150px 150px 0 0;
 }
 
+/* Login Box (Glassmorphism Effect) */
 .login-box {
   max-width: 400px;
   width: 100%;
   padding: 30px;
   text-align: center;
+  background: rgba(255, 255, 255, 0.1); /* Transparent background */
+  backdrop-filter: blur(0px); /* Glass effect */
+  border-radius: 15px;
+  /*box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);*/
 }
 
+/* Heading */
 .login-box h2 {
   font-size: 24px;
-  margin-bottom: 30px;
-  color: #000000;
+  margin-bottom: 15px;
+  color: #ffffff; /* White text */
 }
 
+/* Paragraph */
 .login-box p {
-  color: #000000;
-  margin-bottom: 30px;
+  color: #ffffff;
+  margin-bottom: 15px;
 }
 
+/* Input Fields */
 form input[type="text"],
 form input[type="password"] {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin: 10px 0;
   border: none;
   border-radius: 5px;
   outline: none;
-  background: rgba(255, 255, 255, 0.8);
-  color: #250d0d;
+  background: rgba(255, 255, 255, 0.3); /* Semi-transparent input */
+  color: #ffffff;
+  font-size: 16px;
 }
 
+/* Placeholder Text Color */
+form input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Submit Button */
 form button[type="submit"] {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin-top: 10px;
   border: none;
   border-radius: 5px;
-  background: rgba(255, 0, 0, 0.8);
-  color: #fff;
+  background: rgba(255, 0, 0, 0.8); /* Red transparent */
+  color: #ffffff;
   font-size: 16px;
   cursor: pointer;
+  transition: 0.3s ease;
 }
 
+form button[type="submit"]:hover {
+  background: rgba(255, 0, 0, 1);
+}
+
+/* Options (Remember Me & Forgot Password) */
 form .options {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
   font-size: 14px;
-  color: #000000;
+  color: #ffffff;
 }
 
 form .options a {
   text-decoration: none;
-  color: #000000;
+  color: #ffffff;
 }
 
-form p {
-  margin-top: 30px;
-  color: #000000;
+form .options a:hover {
+  text-decoration: underline;
 }
 
+/* Social Login Buttons */
 .social-login {
   display: flex;
   justify-content: space-around;
@@ -101,10 +125,15 @@ form p {
   width: 50px;
   height: 50px;
   margin-right: 10px;
+  transition: 0.3s ease;
 }
 
 .social-login button:last-child {
   margin-right: 0;
+}
+
+.social-login button:hover {
+  opacity: 0.8;
 }
 
 .social-login button img {
@@ -112,6 +141,7 @@ form p {
   height: auto;
 }
 
+/* Social Login Button Colors */
 .social-login .outlook {
   background: rgba(0, 120, 212, 0.8);
 }
@@ -124,23 +154,76 @@ form p {
   background: rgba(34, 34, 34, 0.8);
 }
 
-.social-login + p {
-  margin-top: 20px;
-}
-
+/* Sign-up Link */
 .login-box p:last-child {
   color: #ffffff;
+  margin-top: 10px;
 }
 
 .signup-link-box {
   display: inline-block;
-  background-color: #ff0000;
+  background-color: rgba(255, 0, 0, 0.8);
   padding: 10px 20px;
   border-radius: 5px;
   color: #ffffff;
   text-decoration: none;
+  transition: 0.3s ease;
 }
 
 .signup-link-box:hover {
-  background-color: #000000;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* ================= Responsive Design ================= */
+@media (max-width: 768px) {
+  .login-box {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .login-container {
+    padding: 0;
+  }
+
+  form input[type="text"],
+  form input[type="password"] {
+    padding: 10px;
+  }
+
+  form button[type="submit"] {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .social-login {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .social-login button {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-box {
+    width: 95%;
+    padding: 15px;
+  }
+
+  form input[type="text"],
+  form input[type="password"] {
+    font-size: 14px;
+  }
+
+  form button[type="submit"] {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .social-login button {
+    width: 35px;
+    height: 35px;
+  }
 }
