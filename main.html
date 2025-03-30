@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KL University Registration</title>
+  <style>
+    /* General body styling */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+
+      /* Background image */
+      background: url('https://th.bing.com/th/id/OIP.y5fEjap7TPhHxEbFNWePogHaEc?rs=1&pid=ImgDetMain') no-repeat center center fixed;
+      background-size: cover;
+
+      /* Add a dark overlay for readability */
+      position: relative;
+    }
+
+    /* Overlay for dark effect */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+      z-index: -1;
+    }
+
+    /* Content container styling */
+    .content {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Header styling */
+    header {
+      background: rgb(255, 254, 254); /* Semi-transparent header */
+      padding: 20px;
+      text-align: center;
+    }
+
+    header img {
+      max-width: 150px;
+    }
+
+    header h1 {
+      margin: 10px 0 0;
+      font-size: 24px;
+      color: rgb(17, 17, 17);
+    }
+
+    /* Main container */
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      min-height: 80vh;
+    }
+
+    .form-container {
+      background: white;
+      color: #333;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 600px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #003366;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    input:focus, select:focus {
+      outline: none;
+      border-color: #f50000;
+      box-shadow: 0 0 5px rgba(0, 102, 204, 0.5);
+    }
+
+    .password-strength {
+      margin-top: 5px;
+      font-size: 12px;
+      font-weight: bold;
+      color: gray;
+    }
+
+    .submit-button {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(135deg, #003366, #0066cc);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .submit-button:hover {
+      background: linear-gradient(135deg, #0066cc, #003366);
+    }
+
+    .message {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    .message.error {
+      color: #e74c3c;
+    }
+
+    .message.success {
+      color: #16a085;
+    }
+
+    /* Footer styling */
+    footer {
+      background: rgba(0, 0, 0, 0.7); /* Semi-transparent footer */
+      padding: 20px;
+      text-align: center;
+      color: white;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #66ccff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .form-container {
+        padding: 20px;
+      }
+
+      header img {
+        max-width: 120px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <!-- Header -->
+    <header>
+      <img src="https://www.iaspaper.net/wp-content/uploads/2018/07/K-L-University.jpg" alt="KL University Logo">
+      <h1>KL University Registration Portal</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <div class="form-container">
+        <h2>Student Registration</h2>
+        <form id="kl-registration-form">
+          <!-- Full Name -->
+          <div class="form-group">
+            <label for="student-name">Full Name:</label>
+            <input type="text" id="student-name" placeholder="Enter your full name" required>
+          </div>
+          <!-- Student ID -->
+          <div class="form-group">
+            <label for="student-id">Student ID:</label>
+            <input type="text" id="student-id" placeholder="Enter your student ID" required>
+          </div>
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email address" required>
+          </div>
+          <!-- Department -->
+          <div class="form-group">
+            <label for="department">Department:</label>
+            <select id="department" required>
+              <option value="">Select your department</option>
+              <option value="cse">Computer Science & Engineering</option>
+              <option value="ece">Electronics & Communication Engineering</option>
+              <option value="mech">Mechanical Engineering</option>
+              <option value="civil">Civil Engineering</option>
+            </select>
+          </div>
+          <!-- Year -->
+          <div class="form-group">
+            <label for="year">Year:</label>
+            <select id="year" required>
+              <option value="">Select your year</option>
+              <option value="1">1st Year</option>
+              <option value="2">2nd Year</option>
+              <option value="3">3rd Year</option>
+              <option value="4">4th Year</option>
+            </select>
+          </div>
+          <!-- Password -->
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+            <p class="password-strength" id="password-strength">Password strength: Weak</p>
+          </div>
+          <!-- Confirm Password -->
+          <div class="form-group">
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" placeholder="Confirm your password" required>
+          </div>
+          <!-- Submit Button -->
+          <button type="submit" class="submit-button">Register</button>
+        </form>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 KL University. All rights reserved. <a href="#">Privacy Policy</a></p>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <header class="navbar">
+    <h1>Welcome, User</h1>
+    <button id="logout-btn">Logout</button>
+  </header>
+  <main class="dashboard">
+    <section class="widget" id="live-clock">
+      <h2>Live Clock</h2>
+      <div id="clock"></div>
+    </section>
+    <section class="widget" id="data-section">
+      <h2>Dynamic Data</h2>
+      <button id="fetch-data">Fetch Data</button>
+      <ul id="data-list"></ul>
+    </section>
+    <section class="widget" id="interactive-section">
+      <h2>Interactive Form</h2>
+      <form id="interactive-form">
+        <input type="text" placeholder="Enter your name" id="user-name" required>
+        <button type="submit">Submit</button>
+      </form>
+      <p id="form-output"></p>
+    </section>
+  </main>
+  <script src="dashboard.js"></script>
+</body>
+</html>
